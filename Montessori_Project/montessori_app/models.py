@@ -18,8 +18,8 @@ class Teacher(models.Model):
     Permanent_address=models.CharField(max_length=20)
     temporary_address=models.CharField(max_length=20)
 
-    def __str__(self):
-        return self.subject
+    # def __str__(self):
+    #     return self.username
 
 
 class Student(models.Model):
@@ -30,8 +30,8 @@ class Student(models.Model):
     Permanent_address=models.CharField(max_length=20)
     temporary_address=models.CharField(max_length=20)
 
-    def __str__(self):
-        return self.username
+    # def __str__(self):
+    #     return self.grade
 
 
 
