@@ -13,4 +13,4 @@ urlpatterns = [
     path('inventory-items/', InventoryItemListCreateView.as_view(), name='inventory-item-list-create'),
     path('inventory-items/<int:pk>/', InventoryItemRetrieveUpdateDestroyView.as_view(), name='inventory-item-retrieve-update-destroy'),
 ]
-]
+
