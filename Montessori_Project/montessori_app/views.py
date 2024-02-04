@@ -3,9 +3,23 @@ from django.shortcuts import render
 """this is my montessori project views using api views child view class"""
 # views.py
 from rest_framework import generics
-from django.contrib.auth.models import User
-from .models import Teacher, Student, Mark, InventoryItem
+# from django.contrib.auth.models import User
+from .models import *
 from .serializer import *
+from rest_framework.views import APIView
+
+class OrganizationApiView(APIView):
+    def get(self,request):
+        query=Organization.objects.all()
+        serializer=OrganizationSerializer(query)
+        return Response(serializer.data)
+
+    def create(self,request,*args,**kwargs):
+        query=Organization.objects.all()
+        serializer=OrganizationSerializer(query,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+        return Response(serializer.data)
 
 class TeacherListCreateView(generics.ListCreateAPIView):
     queryset = Teacher.objects.all()
