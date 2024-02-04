@@ -1,15 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.shortcuts import render
-
-# Create your views here.
-
+"""this is my montessori project views using api views child view class"""
 # views.py
 from rest_framework import generics
 from django.contrib.auth.models import User
 from .models import Teacher, Student, Mark, InventoryItem
-from .serializers import TeacherSerializer, StudentSerializer, MarkSerializer, InventoryItemSerializer, UserSerializer
+from .serializer import TeacherSerializer, StudentSerializer, MarkSerializer, InventoryItemSerializer, UserSerializer
 
 class TeacherListCreateView(generics.ListCreateAPIView):
     queryset = Teacher.objects.all()
