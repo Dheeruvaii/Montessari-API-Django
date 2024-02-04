@@ -25,7 +25,15 @@ class TeacherListCreateView(generics.ListCreateAPIView):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
 
+class TeacherRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Teacher.objects.all()
+    serializer_class = TeacherSerializer
+
 class StudentListCreateView(generics.ListCreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+class StudentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
@@ -33,6 +41,14 @@ class MarkListCreateView(generics.ListCreateAPIView):
     queryset = Mark.objects.all()
     serializer_class = MarkSerializer
 
+class MarkRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Mark.objects.all()
+    serializer_class = MarkSerializer
+
 class InventoryItemListCreateView(generics.ListCreateAPIView):
+    queryset = InventoryItem.objects.all()
+    serializer_class = InventoryItemSerializer
+
+class InventoryItemRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = InventoryItem.objects.all()
     serializer_class = InventoryItemSerializer
